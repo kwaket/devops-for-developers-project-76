@@ -7,5 +7,8 @@ prepare-hosts:
 deploy:
 	ansible-playbook playbook.yml -i inventory.ini --tags deploy --vault-password-file .vault_pass.txt
 
+monitoring:
+	ansible-playbook playbook.yml -i inventory.ini --tags monitoring --vault-password-file .vault_pass.txt
+
 edit-vault:
 	ansible-vault edit group_vars/webservers/vault.yml --vault-password-file .vault_pass.txt
