@@ -1,0 +1,8 @@
+redmine_port: 80
+redmine_db_postgres: rc1b-ruftlvhvi7pcaslu.mdb.yandexcloud.net
+redmine_db_database: redmine
+redmine_db_username: redmine
+redmine_db_port: 6432
+redmine_db_password: "{{ vault_redmine_db_password }}"
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: "datadoghq.eu"

@@ -4,7 +4,6 @@
   vars:
     pip_install_packages:
       - name: docker
-    redmine_port: 80
 
   pre_tasks:
     - name: Update apt package index
@@ -37,10 +36,6 @@
 
 - hosts: webservers
   become: true
-
-  vars:
-    datadog_api_key: "{{ vault_datadog_api_key }}"
-    datadog_site: "datadoghq.eu"
 
   tasks:
     - name: Import the Datadog Agent
