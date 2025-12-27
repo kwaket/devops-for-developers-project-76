@@ -1,0 +1,15 @@
+- hosts: all
+  become: true
+
+  vars:
+    pip_install_packages:
+      - name: docker
+
+  pre_tasks:
+    - name: Update apt package index
+      apt:
+        update_cache: yes
+
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
