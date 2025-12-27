@@ -13,5 +13,9 @@ https://savangard.space
     `make install-dependencies`
 3. Install dependencies 
     `make prepare-hosts`
-4. Deploy Redmine
+4. Set secrets
+    `make edit-vault`
+5. Deploy Redmine
     `make deploy`
+6. Install monitoring
+    `make monitoring`
