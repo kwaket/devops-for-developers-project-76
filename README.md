@@ -1,5 +1,10 @@
+# Redmine
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/kwaket/devops-for-developers-project-76/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/kwaket/devops-for-developers-project-76/actions)
+
+## Application link
+https://savangard.space
 
 ## Run
 1. Clone repo and navigate to the pro directory.
@@ -8,3 +13,5 @@
     `make install-dependencies`
 3. Install dependencies 
     `make prepare-hosts`
+4. Deploy Redmine
+    `make deploy`

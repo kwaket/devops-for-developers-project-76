@@ -3,3 +3,6 @@ install-dependencies:
 
 prepare-hosts:
 	ansible-playbook playbook.yml -i inventory.ini
+
+deploy:
+	ansible-playbook playbook.yml -i inventory.ini --tags deploy

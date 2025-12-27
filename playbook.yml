@@ -4,6 +4,7 @@
   vars:
     pip_install_packages:
       - name: docker
+    redmine_port: 80
 
   pre_tasks:
     - name: Update apt package index
@@ -13,3 +14,23 @@
   roles:
     - geerlingguy.pip
     - geerlingguy.docker
+
+  tasks:
+    - name: Copy environment file
+      ansible.builtin.template:
+        src: .env.j2
+        dest: .env
+        mode: "0644"
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+      tags: deploy
+
+    - name: Run Redmine container
+      community.docker.docker_container:
+        name: redmine
+        image: "redmine:6.0.7-alpine3.23"
+        restart_policy: always
+        state: started
+        env_file: .env
+        ports: "{{ redmine_port }}:3000"
+      tags: deploy
