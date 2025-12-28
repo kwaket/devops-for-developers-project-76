@@ -1,0 +1,8 @@
+application_host: "http://127.0.0.1:3000"
+datadog_api_key: "{{ vault_datadog_api_key }}"
+datadog_site: "datadoghq.eu"
+datadog_checks:
+  http_check:
+    init_config:
+    instances:
+      - url: "{{ application_host }}"
