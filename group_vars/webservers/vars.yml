@@ -6,3 +6,5 @@ datadog_checks:
     init_config:
     instances:
       - url: "{{ application_host }}"
+
+redmine_db_password: "{{ vault_redmine_db_password }}"

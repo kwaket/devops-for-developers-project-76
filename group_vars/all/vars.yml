@@ -3,4 +3,3 @@ redmine_db_postgres: rc1b-ruftlvhvi7pcaslu.mdb.yandexcloud.net
 redmine_db_database: devops_course
 redmine_db_username: devops_course
 redmine_db_port: 6432
-redmine_db_password: "{{ vault_redmine_db_password }}"
