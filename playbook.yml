@@ -23,7 +23,7 @@
         mode: "0644"
         owner: root
         group: root
-      tags: deploy
+      tags: env
 
     - name: Run Redmine container
       community.docker.docker_container:
