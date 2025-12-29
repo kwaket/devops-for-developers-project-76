@@ -8,6 +8,7 @@ https://savangard.space
 
 ## Requirements
 - Ansible
+- Ansible-lint
 - Git
 - Make
 

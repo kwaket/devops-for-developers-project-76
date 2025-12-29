@@ -1,4 +1,5 @@
-- hosts: all
+- name: Install Redmine
+  hosts: all
   become: true
 
   vars:
@@ -7,8 +8,8 @@
 
   pre_tasks:
     - name: Update apt package index
-      apt:
-        update_cache: yes
+      ansible.builtin.apt:
+        update_cache: true
 
   roles:
     - geerlingguy.pip
@@ -34,11 +35,11 @@
         ports: "{{ redmine_port }}:3000"
       tags: deploy
 
-- hosts: webservers
+- name: Install monitoring
+  hosts: webservers
   become: true
 
   tasks:
     - name: Import the Datadog Agent
-      import_role:
+      ansible.builtin.import_role:
         name: datadog.dd.agent
-      tags: monitoring

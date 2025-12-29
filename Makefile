@@ -12,3 +12,6 @@ monitoring:
 
 edit-vault:
 	ansible-vault edit group_vars/webservers/vault.yml --vault-password-file .vault_pass.txt
+
+lint:
+	ansible-lint
